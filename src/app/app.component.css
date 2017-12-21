@@ -1,0 +1,18 @@
+.jumbotron{
+    position: absolute;
+    vertical-align: middle;
+        top: 300px;
+        left:300px;
+    
+}
+.container{
+    color: rgb(71, 93, 187);
+}
+.footer {
+    position: absolute;
+    bottom : 0px; 
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px;
+  }

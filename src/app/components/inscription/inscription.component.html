@@ -1,0 +1,53 @@
+<div id="msg" class="container">
+  <div class="home-row homepage-container" layout="row" layout-xs="column">
+    <br>
+    <h4> Inscrivez-vous sur Interact'Collabs ! </h4>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="jumbotron">
+
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group row">
+        <label for="nom" class="col-sm-3 col-form-label col-form-label-sm">Nom</label>
+        <div class="col-sm-5">
+          <input type="name" class="form-control" name="nom" placeholder="Entrez votre nom" [(ngModel)]="model.nom" #nom="ngModel"
+            required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="prenom" class="col-sm-3 col-form-label col-form-label-sm">Prénom </label>
+        <div class="col-sm-5">
+          <input type="name" class="form-control" name="prenom" placeholder="Entrez votre prénom" [(ngModel)]="model.prenom" #prenom="ngModel"
+            required>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="email" class="col-sm-3 col-form-label col-form-label-sm">Email </label>
+        <div class="col-sm-5">
+          <input type="email" class="form-control" name="email" placeholder="Entrez votre adresse email" [(ngModel)]="model.email"
+            #email="ngModel" required>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="password" class="col-sm-3 col-form-label col-form-label-sm">Mot de passe</label>
+        <div class="col-sm-5">
+          <input type="password" name="password" placeholder="Choissiez un mot de passe" class="form-control" [(ngModel)]="model.password"
+            #password="ngModel" required>
+        </div>
+      </div>
+      <input type="submit" class="btn btn-primary btn-sm-5 float-right" value="S'incrire" [disabled]="!f.form.valid">
+
+    </form>
+
+  </div>
+
+</div>

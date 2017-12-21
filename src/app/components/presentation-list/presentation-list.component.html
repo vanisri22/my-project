@@ -1,0 +1,17 @@
+<div id="msg" class="container">
+  <div class="home-row homepage-container" layout="row" layout-xs="column">
+    <br>
+    <h4> Mes présentations </h4>
+  </div>
+</div>
+
+
+
+<div class="container" >
+  <ul>
+    <li *ngFor="let p of PRES " >
+      <a routerLink='/presentations/{{p.id}}'> Présentation du {{p.date_pres}} : {{ p.nom_pres }} </a>
+    </li>
+  </ul>
+  `
+</div>

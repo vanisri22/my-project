@@ -1,0 +1,82 @@
+<!-- 
+  <nav id="nav" class="navbar ">
+  <a class="navbar-brand" href="#">
+    <img src="/assets/logo_interact.jpg" width="300" height="50" class="d-inline-block align-top" alt="">
+  </a>
+
+  <button class="navbar-toggler navbar-toggler-right custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/']">Accueil
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/aboutUs']">A propos de nous</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" *ngIf="login()" [routerLink]="['/presentations']">Mes Présentations</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" *ngIf="login()" [routerLink]="['/profile']">Mon Profil </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" *ngIf="login()" [routerLink]="['/newsession']">Nouvelle session </a>
+      </li>
+
+      <li class="nav-item">
+        <button class="btn btn-danger" style="cursor: pointer;" *ngIf="login()" (click)="onLogout()">Déconnexion </button>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+-->
+
+
+<div id="hero">
+  <nav class="navbar navbar-toggleable-md navbar-inverse">
+
+    <a class="navbar-brand" href="#">
+      <img src="/assets/logo_interact.jpg" width="300" height="50" class="d-inline-block align-top" alt="">
+    </a>
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-primary" routerLinkActive="active" [routerLink]="['/']">Accueil </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-primary" routerLinkActive="active" [routerLink]="['/aboutUs']">A propos de nous</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-primary" routerLinkActive="active" *ngIf="login()" [routerLink]="['/presentations']">Mes Présentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-primary" routerLinkActive="active" *ngIf="login()" [routerLink]="['/profile']">Mon Profil </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-primary" routerLinkActive="active" *ngIf="login()" [routerLink]="['/newsession']">Nouvelle session </a>
+        </li>
+
+        <li class="nav-item">
+          <button class="btn btn-danger" style="cursor: pointer;" *ngIf="login()" (click)="onLogout()">Déconnexion </button>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+</div>

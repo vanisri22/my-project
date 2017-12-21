@@ -1,0 +1,42 @@
+<div id="msg" class="container">
+  <div class="home-row homepage-container" layout="row" layout-xs="column">
+    <br>
+    <h4> Créer une nouvelle présentation </h4>
+    <p>Uploder le fichier que vous souhaitez utilisé comme support durant votre </p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="jumbotron">
+    <h5></h5>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <div class="form-group row">
+        <label for="titre" class="col-sm-3 col-form-label col-form-label-sm">Titre de la session</label>
+        <div class="col-sm-5">
+          <input type="text" id="titre" name="titre" class="form-control form-control-sm" id="titre" [(ngModel)]="model.titre" required
+            #titre="ngModel">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="uploadFile" class="col-sm-3 col-form-label col-form-label-sm">Uploder votre fichier .pdf</label>
+        <div class="col-sm-5">
+          <input type="file" id="uploadFile" name="uploadFile" (change)="onFileChange($event)" [(ngModel)]="model.uploadFile" required
+            #uploadFile="ngModel">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="date" class="col-sm-3 col-form-label col-form-label-sm">Quand aura lieu votre présentation ? </label>
+        <div class="col-sm-5">
+          <input type="date" id="date" name="date" placeholder="dd/mm/yyyy" [(ngModel)]="model.date" required #date="ngModel" />
+        </div>
+      </div>
+
+      <input class="btn btn-primary btn-sm-10 float-right" type="submit" value="Valider" role="button">
+
+    </form>
+
+  </div>
+
+</div>

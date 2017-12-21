@@ -1,0 +1,81 @@
+<div id="msg" class="container">
+  <div class="home-row homepage-container" layout="row" layout-xs="column">
+    <br>
+    <h4> Mon profil Interact'Collabs </h4>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="jumbotron">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group row">
+        <label for="nom" class="col-sm-3 col-form-label col-form-label-sm">Nom</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="nom" id="nom" [value]=this.user.nom [(ngModel)]="model.nom" #nom="ngModel"
+            required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="prenom" class="col-sm-3 col-form-label col-form-label-sm">Prénom</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="prenom" id="prenom" [value]=this.user.prenom [(ngModel)]="model.prenom" #prenom="ngModel"
+            required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="email" class="col-sm-3 col-form-label col-form-label-sm">Email</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="email" id="email" [value]=this.user.mail [(ngModel)]="model.email" #email="ngModel"
+            required>
+        </div>
+      </div>
+      <input class="btn btn-primary btn-sm-10 float-right" type="submit" value="Enregistrer les modifications" role="button">
+    </form>
+  </div>
+</div>
+
+<!-- open a modal window by clicking button
+<div id="bootstrapModel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header section</h4>
+      </div>
+
+      <div class="modal-body">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="name" class="form-control" name="nom" placeholder="{{this.user.nom}}" [(ngModel)]="model.nom" #nom="ngModel"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="prenom">Prénom </label>
+            <input type="name" class="form-control" name="prenom" placeholder="{{this.user.prenom}}" [(ngModel)]="model.prenom" #prenom="ngModel"
+              required>
+          </div>
+
+
+          <div class="form-group">
+            <label for="email">Email </label>
+            <input type="email" class="form-control" name=email placeholder="{{this.user.mail}}" [(ngModel)]="model.email" #email="ngModel"
+              required>
+          </div>
+          
+          <div class="modal-footer">
+            <input class="btn btn-primary btn-lg" type="submit" value="Modifier" role="button" >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+-->

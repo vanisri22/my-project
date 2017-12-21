@@ -1,0 +1,212 @@
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPModal" *ngIf="emptyCard()">
+  Ajouter un nouveau post-it
+</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newCModal">
+  Nouvelle colonne
+</button>
+
+<!--Fin des boutons-->
+
+
+<div class="container-fluid">
+  <div class="row ">
+    <div *ngFor="let c of card;" class="col-xs-4 col-md-3">
+      <div class="card card-outline-primary" droppable [dragOverClass]="'drag-target-border'" [dropScope]="c.nom" [dragHintClass]="'drag-hint'"
+        (onDrop)="onCardDrop($event,c.name)">
+
+        <div class="card-header card-inverse card-primary">
+          {{c.nom}}
+        </div>
+
+        <div class="card-block scroll-list">
+          <ul class="list-group text-center">
+            <li draggable *ngFor="let cc of c.contenu" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item justify-content-between list-group-item-action"
+              [dragScope]="cc" [dragHandle]="'.drag-bar'" id="c.nom">
+              {{cc}}
+              <i #dragHandle class="drag-bar fa fa-bars fa-lg" aria-hidden="true"></i>
+            </li>
+          </ul>
+        </div>
+        <!-- end div class card-block -->
+        <button type="button" (click)="deleteCard(c.nom)" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- end div class card card-outline -->
+    </div>
+    <!-- end col -->
+  </div>
+  <!-- end row -->
+</div>
+<!-- end container -->
+
+<!--- MODAL POUR LA CREATION D'UNE COLONNE -->
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="newCModal" tabindex="-1" role="dialog" aria-labelledby="newCModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal">Ajout d'une nouvelle colonne</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <form #f="ngForm" (ngSubmit)="onSubmitC(f)">
+          <div class="modal-body">
+            <div class="form-group row">
+              <label for="titre" class="col-sm-3 col-form-label col-form-label-sm">Titre</label>
+              <div class="col-sm-6">
+                <input type="name" class="form-control" name="titre" placeholder="Entrez le titre de la colonne" [(ngModel)]="model.titre"
+                  #titre="ngModel" required>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="button" (click)="onSubmitC(f)" data-dismiss="modal" class="btn btn-primary btn-sm-5 float-right" value="Ajouter"
+              [disabled]="!f.form.valid">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          </div>
+          <div class="help-block with-errors" *ngIf="nameAlreadyInUse(model.titre)"  > {{msg}}</div>
+        </form>
+
+     
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END CREATION D'UNE COLONNE -->
+
+
+<!--- MODAL POUR LA CREATION D'UN POST-IT -->
+<div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="newPModal" tabindex="-1" role="dialog" aria-labelledby="newPModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal">Ajout d'un nouveau post-it</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form #p="ngForm" (ngSubmit)="onSubmitP(f)">
+          <div class="modal-body">
+            <div class="form-group row">
+              <label for="titre" class="col-sm-3 col-form-label col-form-label-sm">Titre</label>
+              <div class="col-sm-6">
+                <input type="name" class="form-control" name="contenu" placeholder="Contenu du post-it" [(ngModel)]="model.contenu" #contenu="ngModel"
+                  required>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="options">Case</label>
+              <select id="opt" [ngModelOptions]="{standalone: true}" [(ngModel)]="model.opt" #opt="ngModel" required>
+                <option *ngFor="let o of card" [ngValue]="o.nom">{{o.nom}}</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <input type="button" (click)="onSubmitP(p)" data-dismiss="modal" class="btn btn-primary btn-sm-5 float-right" value="Ajouter"
+              [disabled]="!p.form.valid">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END CREATION D'UN POST-IT -->
+
+
+
+<!--
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card card-outline-success mb-3">
+      <div class="card-header card-inverse card-success">
+        Draggable Items
+      </div>
+      <div class="card-block scroll-list">
+        <div class="list-group">
+          <li class="list-group-item list-group-item-action list-group-item-success" [draggable] *ngFor="let item of vegetables" [dragClass]="'active'"
+            [dragData]="item" [dragScope]="item.type" [dragEnabled]="dragEnabled">
+            {{item.name}}
+          </li>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" title="Drag Enabled" [(ngModel)]="dragEnabled"> Drag Enabled
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-outline-primary mb-3">
+      <div class="card-header card-inverse card-primary">Draggable Items with Handle</div>
+      <div class="card-block scroll-list">
+        <ul class="list-group text-center">
+          <li draggable *ngFor="let item of fruits" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item justify-content-between list-group-item-action"
+            [dragScope]="item.type" [dragHandle]="'.drag-bar'">
+            {{item.name}}
+            <i #dragHandle class="drag-bar fa fa-bars fa-lg" aria-hidden="true"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="card card-outline-primary mb-3" droppable [dragOverClass]="'drag-target-border'" [dropScope]="'fruit'" [dragHintClass]="'drag-hint'"
+      (onDrop)="onFruitDrop($event)" [dropEnabled]="fruitDropEnabled">
+      <div class="card-header card-inverse card-primary">
+        Drop Fruits here
+      </div>
+      <div class="card-block scroll-list">
+        <li *ngFor="let item of droppedFruits" class="list-group-item">{{item.name}}</li>
+      </div>
+
+      <div class="card-footer">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" [(ngModel)]="fruitDropEnabled"> Drop Enabled
+          </label>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="col-sm-3">
+    <div class="card card-outline-primary mb-3" droppable [dragOverClass]="'drag-target-border-green'" [dropScope]="'vegetable'"
+      [dragHintClass]="'drag-hint'" (onDrop)="onVegetableDrop($event)">
+      <div class="card-header card-inverse card-primary">Drop Vegetables here</div>
+      <div class="card-block scroll-list">
+        <li *ngFor="let item of droppedVegetables" class="list-group-item">{{item.name}}</li>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="card card-outline-primary mb-3" droppable [dragOverClass]="'drag-target-border'" [dropScope]="['fruit', 'vegetable']"
+      [dragHintClass]="'drag-hint'" (onDrop)="onAnyDrop($event)">
+      <div class="card-header card-inverse card-primary">Drop Anything here</div>
+      <div class="card-block scroll-list">
+        <li *ngFor="let item of droppedItems" class="list-group-item">{{item.name}}</li>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+-->
