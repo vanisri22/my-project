@@ -1,7 +1,30 @@
-html{
+.form-control{
+    background-color:transparent !important;
+    border-style:dotted;
+    border-color: rgb(65, 125, 255);
+}
+.jumbotron{
+    background-color:transparent !important;
+    border-style:double;
+    border-color: rgb(65, 125, 255);
+    width: 50vw
     
-     background-image:url('http://www.hddesktopbackgrounds.us/backgrounds-images/1920x1080/paove-desktop-1624526-1920x1080.jpg');
-   }
+}
+
+.container{
+    color: #87bcf8;
+    width: 50vw
+}
+
+input::placeholder {
+    color: #e3f2fdc9;
+  }
+
+
+#inputLogPassword{
+    color: #e3f2fdc9;
+}
+
 
 h4{
     text-align: center;
@@ -9,8 +32,4 @@ h4{
 
 h5{
     text-align: center;
-}
-
-.jumbotron{
-    color: rgb(red, green, blue);
 }

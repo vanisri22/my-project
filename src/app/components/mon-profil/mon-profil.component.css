@@ -3,5 +3,32 @@ h4{
 }
 
 .container{
-    color: rgb(71, 93, 187);
+    color:#87bcf8;
+}
+
+.form-control{
+    background-color:transparent !important;
+    border-style:dotted;
+    border-color: rgb(65, 125, 255);
+    color: #e3f2fdc9;
+}
+.jumbotron{
+    background-color:transparent !important;
+    border-style:double;
+    border-color: rgb(65, 125, 255);
+}
+.bd-pageheader h1, .bd-pageheader p {
+    margin-right: 380px;
+    color: #87bcf8;
+}
+
+.bd-pageheader h1 {
+    
+    position: center;
+}
+
+.bd-pageheader p {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    font-weight: 300;
 }

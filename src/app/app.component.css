@@ -5,14 +5,16 @@
         left:300px;
     
 }
-.container{
-    color: rgb(71, 93, 187);
-}
+
 .footer {
-    position: absolute;
-    bottom : 0px; 
+    position: relative;
+    bottom: 0;
     width: 100%;
-    /* Set the fixed height of the footer here */
     height: 60px;
     line-height: 60px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
   }
+
+  

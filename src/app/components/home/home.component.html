@@ -1,27 +1,27 @@
 <div id="msg" class="container">
-    <div class="home-row homepage-container" layout="row" layout-xs="column">
-        <br>
-        <h4>
-            Bienvenue sur Interact'Collabs !
-            <br>
-            <br> Ne soyez pas le seul à parler durant vos présentations!
+    <div class="container">
+        <h1> Bienvenue sur Interact'Collabs ! </h1>
+        <p class="lead">
+            Ne soyez plus le seul à parler durant vos présentations!
             <br> Rendez-les plus interactives et faites participer votre public!
-        </h4>
     </div>
 </div>
+<br>
+
+<ng4-loading-spinner> </ng4-loading-spinner>
 <div id="formulaire" class="container">
-    <div class="jumbotron">
-        <h5>Identifiez-vous
-            <br>
-        </h5>
+    <h5>Identifiez-vous</h5>
+    <br>
+    <div class="jumbotron ">
         <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
             <div class="form-group row">
                 <label for="inputLogEmail" class="col-sm-3 col-form-label col-form-label-sm">Email</label>
                 <div class="col-sm-5">
-                    <input type="email" name="email" class="form-control form-control-sm" id="inputLogEmail" placeholder="you@example.com" [(ngModel)]="model.email"
-                        required #email="ngModel">
+                    <input type="email" name="email" class="form-control form-control-sm" style="color: #e3f2fd" id="inputLogEmail" placeholder="you@example.com"
+                        [(ngModel)]="model.email" required #email="ngModel">
                 </div>
             </div>
+
             <div class="form-group row">
                 <label for="inputLogPassword" class="col-sm-3 col-form-label col-form-label-sm">Mot de passe</label>
                 <div class="col-sm-5">
@@ -29,12 +29,9 @@
                         required #password="ngModel">
                 </div>
             </div>
-            <input class="btn btn-primary btn-sm-10 float-right" type="submit" value="Connexion" role="button" [disabled]="!f.form.valid">
+            <input class="btn btn-primary btn-sm-5 float-right" type="submit" value="Connexion" role="button" [disabled]="!f.form.valid">
 
         </form>
-        <div id="loginFalse">
-            {{messageErreur}}
-        </div>
         <br>
         <br>
         <br>
@@ -46,5 +43,3 @@
 
 
 </div>
-
-

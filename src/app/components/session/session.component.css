@@ -1,7 +1,51 @@
-h4,p{
-    text-align: center;
+.container{
+    color:#87bcf8;
 }
 
-.container{
-    color: rgb(71, 93, 187);
+img-cropper{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-dialog .modal-lg{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input::placeholder {
+    color: #e3f2fdc9;
+  }
+
+input{
+    background-color:transparent !important;
+    border-style:dotted;
+    border-color: rgb(65, 125, 255);
+    color:white;
+}
+.form-control{
+    background-color:transparent !important;
+    border-style:dotted;
+    border-color: rgb(65, 125, 255);
+}
+.jumbotron{
+    background-color:transparent !important;
+    border-style:double;
+    border-color: rgb(65, 125, 255);
+}
+
+
+.bd-pageheader h1, .bd-pageheader p {
+    margin-right: 380px;
+    color: #87bcf8;
+}
+
+.bd-pageheader h1 {
+    
+    position: center;
+}
+
+.bd-pageheader p {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    font-weight: 300;
 }

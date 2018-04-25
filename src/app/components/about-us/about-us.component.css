@@ -1,4 +1,20 @@
-.msg{
-    color: red;
-    background-color: yellow;
+.bd-pageheader h1, .bd-pageheader p {
+    margin-right: 380px;
+    color: #87bcf8;
+}
+
+.bd-pageheader h1 {
+    
+    position: center;
+}
+
+.bd-pageheader p {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+#abc{
+    font-size: 1.25rem;
+    color: #87bcf8;
 }

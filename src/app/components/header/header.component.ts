@@ -5,8 +5,6 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { HttpModule } from '@angular/http';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -18,10 +16,12 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   isLoggedIn;
   
-
   constructor(private home: HomeComponent,private http: Http, private router: Router) {
   }
 
+  getBNeed(){
+    return this.home.getNeed();
+  }
   ngOnInit() {
     this.isLoggedIn = (localStorage.getItem('currentUser') != null);
   }

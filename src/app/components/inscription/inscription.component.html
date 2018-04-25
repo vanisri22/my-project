@@ -1,15 +1,14 @@
 <div id="msg" class="container">
-  <div class="home-row homepage-container" layout="row" layout-xs="column">
-    <br>
-    <h4> Inscrivez-vous sur Interact'Collabs ! </h4>
-  </div>
+    <div class="container">
+        <h1> Inscrivez vous sur Interact'Collabs </h1>
+        <p class="lead">
+          Créez vous un compte et faites participer votre public
+    </div>
 </div>
-
-
+<br>
 
 <div class="container">
   <div class="jumbotron">
-
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
       <div class="form-group row">
         <label for="nom" class="col-sm-3 col-form-label col-form-label-sm">Nom</label>
@@ -44,7 +43,7 @@
             #password="ngModel" required>
         </div>
       </div>
-      <input type="submit" class="btn btn-primary btn-sm-5 float-right" value="S'incrire" [disabled]="!f.form.valid">
+      <input type="submit" class="btn btn-primary btn-sm-10 float-right" value="S'incrire" [disabled]="!f.form.valid">
 
     </form>
 

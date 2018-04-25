@@ -1,7 +1,28 @@
+a:hover {
+    color: rgb(149, 234, 255);
+}
+
 h4{
     text-align: center;
 }
 
 .container{
-    color: rgb(71, 93, 187);
+    color: #87bcf8;
 }
+
+.bd-pageheader h1, .bd-pageheader p {
+    margin-right: 380px;
+    color: #87bcf8;
+}
+
+.bd-pageheader h1 {
+    position: center;
+}
+
+.bd-pageheader p {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+

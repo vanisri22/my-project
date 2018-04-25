@@ -1,17 +1,30 @@
 <div id="msg" class="container">
-  <div class="home-row homepage-container" layout="row" layout-xs="column">
-    <br>
-    <h4> Mes présentations </h4>
+  <div class="container">
+    <h1> Mes Présentations </h1>
+    <p class="lead">
+      Here you can find all your presentations!
+    </p>
   </div>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+
+<ng4-loading-spinner> </ng4-loading-spinner>
 
 
-<div class="container" >
-  <ul>
-    <li *ngFor="let p of PRES " >
-      <a routerLink='/presentations/{{p.id}}'> Présentation du {{p.date_pres}} : {{ p.nom_pres }} </a>
+<div class="container" *ngIf="!getEmpty()">
+  <ul *ngFor="let p of PRES " style= " color:#87bcf8;" >
+    <li>
+      <a routerLink='/presentations/{{p.id}}' > Présentation du {{p.date_pres}} : {{ p.nom_pres }} </a>
     </li>
   </ul>
-  `
+</div>
+
+<div class="container" *ngIf="getEmpty()">
+  <h6> Vous n'avez jusqu'à présent créer aucune présentation </h6>
+  <button class="btn btn-primary" routerLink='/newsession'> Création </button>
+
 </div>
